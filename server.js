@@ -6,8 +6,11 @@ const passport = require('passport');
 const users = require('./routes/api/users');
 const profile = require('./routes/api/profile');
 const posts = require('./routes/api/posts');
+const fileUpload = require('express-fileupload');
+
 
 const app = express();
+app.use(fileUpload());
 
 //Body parser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
