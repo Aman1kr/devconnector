@@ -4,8 +4,11 @@
   "description": "Socail network for Developers",
   "main": "server.js",
   "scripts": {
+    "client-install": "npm install --prefix client",
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Aman Kumar",
   "license": "MIT",
@@ -14,6 +17,7 @@
     "body-parser": "^1.19.0",
     "busboy": "^0.3.1",
     "busboy-body-parser": "^0.3.2",
+    "concurrently": "^5.0.0",
     "connect-busboy": "0.0.2",
     "express": "^4.17.1",
     "express-fileupload": "^1.1.6-alpha.5",
